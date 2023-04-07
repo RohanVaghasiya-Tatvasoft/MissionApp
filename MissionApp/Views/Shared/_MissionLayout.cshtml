@@ -1,0 +1,107 @@
+﻿@using System.Security.Claims;
+@{
+    var identity = User.Identity as ClaimsIdentity;
+    var firstName = identity?.FindFirst(ClaimTypes.Name)?.Value;
+    var lastName = identity?.FindFirst(ClaimTypes.Surname)?.Value;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MissionApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/platformLandingPage.css" />
+</head> 
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid " id="top-header-row">
+            <div id="nav-bar">
+                <button class="navbar-toggler border-0" href="#menubar" role="button" data-bs-toggle="offcanvas"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        id="navbar-toggler-btn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="menubar" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" id="offcanvas-body" style="margin-left:3vw;">
+                        <ul class="navbar-nav nav-item">
+                            <a href="#" class="nav-link">Stories</a>
+                        </ul>
+                        <ul class="navbar-nav nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarScrollingDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Privacy
+                                <img src="~/images/drop-down.png" style="margin-left:5px" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="#">First Link</a></li>
+                                <li><a class="dropdown-item" href="#">Second Link</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Third Link</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="nav-bar">
+                    <ul class="navbar-nav d-flex">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link profile-link-part" href="#" id="navbarScrollingDropdown " role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/images/user-img.png" class="rounded-circle" height="35" width="35" alt="Profile pic"
+                                     loading="lazy" />
+                                <span style="margin-left:5px;">@firstName @lastName</span>
+                                <img src="~/images/drop-down.png" style="margin-left:5px" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" asp-controller="" asp-action="">Volunteering Timesheet</a></li>
+                                <li><a class="dropdown-item" asp-controller="" asp-action="Logout">Signout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div id="nav-bar">
+                    <ul class="navbar-nav /ed-flex">
+                        <li class="nav-item">
+                            <a asp-action="Login" asp-controller="Auth" class="nav-link profile-link-part">
+                                <span>Signin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            }
+            
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <main role="main">
+            <partial name="_Notification" />
+            @RenderBody()
+        </main>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
