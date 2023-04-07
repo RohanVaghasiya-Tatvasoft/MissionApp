@@ -1,0 +1,14 @@
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\bin\Debug\net6.0\MissionApp.Entities.deps.json
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\bin\Debug\net6.0\MissionApp.Entities.runtimeconfig.json
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\bin\Debug\net6.0\MissionApp.Entities.dll
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\bin\Debug\net6.0\MissionApp.Entities.pdb
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.csproj.AssemblyReference.cache
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.AssemblyInfoInputs.cache
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.AssemblyInfo.cs
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.dll
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\refint\MissionApp.Entities.dll
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.pdb
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\MissionApp.Entities.genruntimeconfig.cache
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.Entities\obj\Debug\net6.0\ref\MissionApp.Entities.dll
