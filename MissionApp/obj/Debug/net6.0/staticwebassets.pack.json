@@ -477,6 +477,14 @@
       "PackagePath": "staticwebassets\\images\\xlsx.png"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\cardView.js",
+      "PackagePath": "staticwebassets\\js\\cardView.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\platformLandingPage.js",
+      "PackagePath": "staticwebassets\\js\\platformLandingPage.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

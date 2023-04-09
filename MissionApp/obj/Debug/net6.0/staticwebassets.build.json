@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5HZZiqtw2ckCwvau36X9pNd86vEEk0fuC4Kkkcw89TY=",
+  "Hash": "LRKJnIB3hk+jvw8xetZCcxmULd1bCtOl/wIDV31cbf4=",
   "Source": "MissionApp",
   "BasePath": "_content/MissionApp",
   "Mode": "Default",
@@ -2055,6 +2055,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\xlsx.png"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\cardView.js",
+      "SourceId": "MissionApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\",
+      "BasePath": "_content/MissionApp",
+      "RelativePath": "js/cardView.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\cardView.js"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\platformLandingPage.js",
+      "SourceId": "MissionApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\",
+      "BasePath": "_content/MissionApp",
+      "RelativePath": "js/platformLandingPage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\platformLandingPage.js"
     },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\site.js",

@@ -38,7 +38,7 @@
                                     @foreach(var country in Model.Countries)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox" data-countryId=""> @country.Name
+                                            <input type="checkbox" id="dropDownCountry" value="" class="checkbox" data-countryId=""> @country.Name
                                         </li>
                                     }
                                     
@@ -60,7 +60,7 @@
                                     @foreach(var city in Model.Cities)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox" data-pId=""> @city.Name
+                                            <input type="checkbox" id="dropDownCity" value="" class="checkbox" data-pId=""> @city.Name
                                         </li>
                                     }
                                     
@@ -82,7 +82,7 @@
                                     @foreach(var theme in Model.Themes)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox"> @theme.Title
+                                            <input type="checkbox" id="dropDownTheme" value="" class="checkbox"> @theme.Title
                                         </li>
                                     }
                                     
@@ -104,7 +104,7 @@
                                     @foreach(var skill in Model.Skills)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox"> @skill.SkillName
+                                            <input type="checkbox" id="dropDownSkill" value="" class="checkbox"> @skill.SkillName
                                         </li>
                                     }
                                     
