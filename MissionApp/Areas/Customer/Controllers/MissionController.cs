@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MissionApp.Entities.Data;
+using MissionApp.Entities.ViewModels;
 
 namespace MissionApp.Areas.Customer.Controllers
 {

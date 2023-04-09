@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MissionApp.Entities.Models;
 
-public partial class StotyInvite
+public partial class StoryInvite
 {
     public int StoryInviteId { get; set; }
 

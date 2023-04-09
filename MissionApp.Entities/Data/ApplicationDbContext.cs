@@ -56,7 +56,7 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<StoryMedium> StoryMedia { get; set; }
 
-    public virtual DbSet<StotyInvite> StotyInvites { get; set; }
+    public virtual DbSet<StoryInvite> StoryInvites { get; set; }
 
     public virtual DbSet<Timesheet> Timesheets { get; set; }
 
@@ -730,7 +730,7 @@ public partial class ApplicationDbContext : DbContext
                 .HasConstraintName("FK__Story_Med__Story__17F790F9");
         });
 
-        modelBuilder.Entity<StotyInvite>(entity =>
+        modelBuilder.Entity<StoryInvite>(entity =>
         {
             entity.HasKey(e => e.StoryInviteId).HasName("PK__Stoty_In__BE13AAD2013A9686");
 
@@ -751,17 +751,17 @@ public partial class ApplicationDbContext : DbContext
                 .HasPrecision(0)
                 .HasColumnName("Updated_at");
 
-            entity.HasOne(d => d.FromUser).WithMany(p => p.StotyInviteFromUsers)
+            entity.HasOne(d => d.FromUser).WithMany(p => p.StoryInviteFromUsers)
                 .HasForeignKey(d => d.FromUserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Stoty_Inv__From___1332DBDC");
 
-            entity.HasOne(d => d.Story).WithMany(p => p.StotyInvites)
+            entity.HasOne(d => d.Story).WithMany(p => p.StoryInvites)
                 .HasForeignKey(d => d.StoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Stoty_Inv__Story__123EB7A3");
 
-            entity.HasOne(d => d.ToUser).WithMany(p => p.StotyInviteToUsers)
+            entity.HasOne(d => d.ToUser).WithMany(p => p.StoryInviteToUsers)
                 .HasForeignKey(d => d.ToUserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Stoty_Inv__To_Us__14270015");

@@ -29,7 +29,7 @@ public partial class Story
 
     public virtual ICollection<StoryMedium> StoryMedia { get; } = new List<StoryMedium>();
 
-    public virtual ICollection<StotyInvite> StotyInvites { get; } = new List<StotyInvite>();
+    public virtual ICollection<StoryInvite> StoryInvites { get; } = new List<StoryInvite>();
 
     public virtual User User { get; set; } = null!;
 }

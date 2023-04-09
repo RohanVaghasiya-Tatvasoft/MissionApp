@@ -1155,6 +1155,20 @@
             "rid": "win"
           }
         }
+      },
+      "MissionApp.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4"
+        },
+        "compile": {
+          "bin/placeholder/MissionApp.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MissionApp.Entities.dll": {}
+        }
       }
     }
   },
@@ -3500,6 +3514,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MissionApp.Entities/1.0.0": {
+      "type": "project",
+      "path": "../MissionApp.Entities/MissionApp.Entities.csproj",
+      "msbuildProject": "../MissionApp.Entities/MissionApp.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3507,7 +3526,8 @@
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.4",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.4"
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.4",
+      "MissionApp.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3536,7 +3556,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp.Entities\\MissionApp.Entities.csproj": {
+              "projectPath": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp.Entities\\MissionApp.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -19,4 +19,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MethodRepository\Interface\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MissionApp.Entities\MissionApp.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

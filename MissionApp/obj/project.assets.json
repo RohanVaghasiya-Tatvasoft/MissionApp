@@ -3700,7 +3700,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.4",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
+          "MissionApp.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MissionApp.DataAccess.dll": {}

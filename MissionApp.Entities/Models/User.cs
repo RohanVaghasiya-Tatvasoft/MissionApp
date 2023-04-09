@@ -59,9 +59,9 @@ public partial class User
 
     public virtual ICollection<Story> Stories { get; } = new List<Story>();
 
-    public virtual ICollection<StotyInvite> StotyInviteFromUsers { get; } = new List<StotyInvite>();
+    public virtual ICollection<StoryInvite> StoryInviteFromUsers { get; } = new List<StoryInvite>();
 
-    public virtual ICollection<StotyInvite> StotyInviteToUsers { get; } = new List<StotyInvite>();
+    public virtual ICollection<StoryInvite> StoryInviteToUsers { get; } = new List<StoryInvite>();
 
     public virtual ICollection<Timesheet> Timesheets { get; } = new List<Timesheet>();
 
