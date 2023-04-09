@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MissionApp.DataAccess.GenericRepository.Interface;
 using MissionApp.Entities.Data;
 using MissionApp.Entities.ViewModels;
 
@@ -7,16 +8,23 @@ namespace MissionApp.Areas.Customer.Controllers
     [Area("Customer")]
     public class MissionController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        public MissionController(ApplicationDbContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        public MissionController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 //--------------------------------------- Platform Landing Page ---------------------------------------------//
 
         public IActionResult PlatformLandingPage()
         {
-            return View();
+            UserVM userVM = new()
+            {
+                Countries = _unitOfWork.Country.GetAll(),
+                Cities = _unitOfWork.City.GetAll(),
+                Themes = _unitOfWork.MissionTheme.GetAll(),
+                Skills = _unitOfWork.Skill.GetAll()
+            };
+            return View(userVM);
         }
 
 

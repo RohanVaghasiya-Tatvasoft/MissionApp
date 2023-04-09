@@ -6,7 +6,7 @@
         <div class="row container-fluid mx-auto px-0">
 
             <div class="col-10 col-md-5 py-2">
-                <form class="d-flex" id="search-inp">
+                <form class="d-flex" id="search-inp"> 
                     <input class="form-control ms-0 me-2 border-0 bg-light" type="search" placeholder="Search mission..." id="searchtab" aria-label="Search">
                 </form>
             </div>
@@ -35,10 +35,12 @@
                                 </a>
                                 <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarScrollingDropdown" id="dropDownCountry">
                                     
+                                    @foreach(var country in Model.Countries)
+                                    {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox" data-countryId="">
-                                            India
+                                            <input type="checkbox" id="" value="" class="checkbox" data-countryId=""> @country.Name
                                         </li>
+                                    }
                                     
                                 </ul>
                             </li>
@@ -54,10 +56,13 @@
                                     <img src="~/images/drop-down.png" style="margin-left:5px" />
                                 </a>
                                 <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarScrollingDropdown" id="dropDownCity">
-                                    
+
+                                    @foreach(var city in Model.Cities)
+                                    {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox" data-pId="">  Ahmedabad
+                                            <input type="checkbox" id="" value="" class="checkbox" data-pId=""> @city.Name
                                         </li>
+                                    }
                                     
                                 </ul>
                             </li>
@@ -73,10 +78,13 @@
                                     <img src="~/images/drop-down.png" style="margin-left:5px" />
                                 </a>
                                 <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarScrollingDropdown" id="dropDownTheme">
-                                    
+
+                                    @foreach(var theme in Model.Themes)
+                                    {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox"> I don't like themes
+                                            <input type="checkbox" id="" value="" class="checkbox"> @theme.Title
                                         </li>
+                                    }
                                     
                                 </ul>
                             </li>
@@ -92,10 +100,13 @@
                                     <img src="~/images/drop-down.png" style="margin-left:5px" />
                                 </a>
                                 <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarScrollingDropdown">
-                                    
+
+                                    @foreach(var skill in Model.Skills)
+                                    {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="" value="" class="checkbox">  bhangar skill
+                                            <input type="checkbox" id="" value="" class="checkbox"> @skill.SkillName
                                         </li>
+                                    }
                                     
                                 </ul>
                             </li>
