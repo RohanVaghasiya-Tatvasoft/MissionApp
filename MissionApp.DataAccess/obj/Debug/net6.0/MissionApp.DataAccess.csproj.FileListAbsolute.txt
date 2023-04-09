@@ -12,3 +12,6 @@ C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\obj\Debug\net6.0\r
 C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\obj\Debug\net6.0\MissionApp.DataAccess.pdb
 C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\obj\Debug\net6.0\MissionApp.DataAccess.genruntimeconfig.cache
 C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\obj\Debug\net6.0\ref\MissionApp.DataAccess.dll
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\bin\Debug\net6.0\MissionApp.Entities.dll
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\bin\Debug\net6.0\MissionApp.Entities.pdb
+C:\Users\Hp\source\repos\MissionApp_Web\MissionApp.DataAccess\obj\Debug\net6.0\MissionApp.DataAccess.csproj.CopyComplete
