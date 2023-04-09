@@ -1,7 +1,14 @@
 ﻿let missionToSearch = "";
 let sortBy = "";
 
+$(document).ready(function () {
+    loadMissions();
+});
 
+$('#searchtab').on("keyup", function (e) {
+    missionToSearch = $('#searchtab').val().toLowerCase();
+    loadMissions();
+});
 
 function loadMissions(pg, sortVal) {
     var country = [];
@@ -35,12 +42,12 @@ function loadMissions(pg, sortVal) {
 
     $.ajax({
 
-        url: "/Mission/MissionCardView",
+        url: "/Customer/Mission/MissionCardView",
         method: "POST",
         dataType: "html",
         data: { 'sortBy': sortBy, 'missionToSearch': missionToSearch, 'pg': pg, 'country': country, 'cities': cities, 'theme': theme },
         success: function (data) {
-            $('#divLoader').addClass("d-none");
+            $("#divLoader").addClass("d-none");
             $('#mission-list').html("");
             $('#mission-list').html(data);
         },
@@ -51,11 +58,3 @@ function loadMissions(pg, sortVal) {
     });
 
 }
-$(document).ready(function () {
-    loadMissions();
-});
-
-$('#searchtab').on("keyup", function (e) {
-    missionToSearch = $('#searchtab').val().toLowerCase();
-    loadMissions();
-});
