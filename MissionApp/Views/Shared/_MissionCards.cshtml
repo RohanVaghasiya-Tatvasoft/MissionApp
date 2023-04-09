@@ -130,18 +130,18 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            @foreach (var items in Model.Volunteers)
+                                            @foreach (var volunteer in Model.Volunteers)
                                             {
                                                 <li class="form-check my-4 user-list">
-                                                    <input class="form-check-input checkbox mx-4" type="checkbox" value="@items.UserId" id="@items.UserId">
-                                                    <img class="rec-user-img me-2" src="@items.Avatar" alt="">
-                                                    <label class="form-check-label" for="">@items.FirstName @items.LastName</label>
+                                                    <input class="form-check-input checkbox mx-4" type="checkbox" value="@volunteer.UserId" id="@volunteer.UserId">
+                                                    <img class="rec-user-img me-2" src="@volunteer.Avatar" alt="">
+                                                    <label class="form-check-label" for="">@volunteer.FirstName @volunteer.LastName</label>
                                                 </li>
                                             }
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-warning" onclick="sendMail(@item.MissionId)">Send Mail</button>
+                                            <button type="button" class="btn btn-warning" onclick="sendMail(@)">Send Mail</button>
                                         </div>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@
                             <div class="border-top border-bottom mt-3" id="missionInfo" style="position: relative;">
                                 <div class="border text-center px-2" id="missionPeriod">
                                     <small>
-                                        @*@Model.GoalMissions.Where(x => x.MissionId == mission.MissionId).Select(x => x.GoalObjectiveText).FirstOrDefault()*@
+                                        @Model.GoalMissions.Where(x => x.MissionId == mission.MissionId).Select(x => x.GoalObjectiveText).FirstOrDefault()
                                     </small>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center px-4 py-3">
@@ -238,14 +238,15 @@
                                     <div class="d-flex align-items-center">
                                         <img class="me-2" height="25" src="~/images/achieved.png" alt="">
                                         <div>
-                                           @* @foreach (var goal in Model.GoalMissions.Where(x => x.MissionId == item.MissionId))
+                                           @foreach (var Goal in Model.GoalMissions.Where(x => x.MissionId == mission.MissionId))
                                             {
-                                                int percentComplete = (int)Math.Round((double)(100 * @goal.GoalValue) / @goal.TotalValue);
+                                                int percentComplete = (int)Math.Round((double)(100 * @Goal.GoalValue.Value) / @Goal.TotalValue.Value);
+
                                                 <div class="progress" style="min-width:100px; width: 11vw; height: 15px;">
                                                     <div class="progress-bar bg-warning" role="progressbar" style="width: @percentComplete%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <small><span>@goal.GoalValue</span> achieved</small>
-                                            }*@
+                                                <small><span>@Goal.GoalValue</span> achieved</small>
+                                            }
                                         </div>
                                     </div>
                                 </div>

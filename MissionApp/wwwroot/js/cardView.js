@@ -12,13 +12,13 @@ $('#searchtab').on("keyup", function (e) {
 
 function loadMissions(pg, sortVal) {
     var country = [];
-    console.log(country);
+    
     $('#dropDownCountry').find("input:checked").each(function (i, ob) {
         country.push($(ob).val());
     });
 
     var cities = [];
-    console.log(cities);
+    
     $('#dropDownCity').find("input:checked").each(function (i, ob) {
         cities.push($(ob).val());
     });

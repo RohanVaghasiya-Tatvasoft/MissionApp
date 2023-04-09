@@ -22,14 +22,14 @@
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
+                </div> 
 
                 <div class="offcanvas-body">
                     <div class="col-auto py-2 searchByFilter ">
                         <ul class="navbar-nav filter-types " style="--bs-scroll-height: 100px; ">
                             <li class="nav-item dropdown w-100">
                                 <a class="nav-link d-flex justify-content-between align-items-center px-3" href="#" id="navbarScrollingDropdown" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   data-bs-toggle="dropdown" aria-expanded="f   alse">
                                     <span>Country</span>
                                     <img src="~/images/drop-down.png" style="margin-left:5px" />
                                 </a>
@@ -38,7 +38,7 @@
                                     @foreach(var country in Model.Countries)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="dropDownCountry" value="" class="checkbox" data-countryId=""> @country.Name
+                                            <input type="checkbox" id="" value="@country.Name" class="checkbox" data-countryId=""> @country.Name
                                         </li>
                                     }
                                     
@@ -60,7 +60,7 @@
                                     @foreach(var city in Model.Cities)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="dropDownCity" value="" class="checkbox" data-pId=""> @city.Name
+                                            <input type="checkbox" id="" value="@city.Name" class="checkbox" data-pId=""> @city.Name
                                         </li>
                                     }
                                     
@@ -82,7 +82,7 @@
                                     @foreach(var theme in Model.Themes)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="dropDownTheme" value="" class="checkbox"> @theme.Title
+                                            <input type="checkbox" id="" value="@theme.Title" class="checkbox"> @theme.Title
                                         </li>
                                     }
                                     
@@ -104,7 +104,7 @@
                                     @foreach(var skill in Model.Skills)
                                     {
                                         <li class="dropdown-item">
-                                            <input type="checkbox" id="dropDownSkill" value="" class="checkbox"> @skill.SkillName
+                                            <input type="checkbox" id="" value="@skill.SkillName" class="checkbox"> @skill.SkillName
                                         </li>
                                     }
                                     

@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using MissionApp.DataAccess.GenericRepository;
 using MissionApp.DataAccess.GenericRepository.Interface;
 using MissionApp.Entities.Data;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
