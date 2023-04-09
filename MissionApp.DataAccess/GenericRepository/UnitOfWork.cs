@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MissionApp.DataAccess.GenericRepository
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
         public UnitOfWork(ApplicationDbContext context)

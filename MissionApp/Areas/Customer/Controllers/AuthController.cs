@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using MissionApp.DataAccess.GenericRepository.Interface;
 using MissionApp.Entities.Data;
 using MissionApp.Entities.Models;
 using MissionApp.Entities.ViewModels;
@@ -13,10 +14,10 @@ namespace MissionApp.Areas.Customer.Controllers
     [Area("Customer")]
     public class AuthController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        public AuthController(ApplicationDbContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        public AuthController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
         //---------------------------------------- Login -------------------------------------------------//
         public IActionResult Login()
@@ -29,7 +30,7 @@ namespace MissionApp.Areas.Customer.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Login(LoginVM loginVM)
         {
-            var userStatus = _context.Users.FirstOrDefault(u => u.Email == loginVM.Email && u.Password == loginVM.Password);
+            var userStatus = _unitOfWork.User.GetFirstOrDefault(u => u.Email == loginVM.Email && u.Password == loginVM.Password);
             if (userStatus == null)
             {
                 ModelState.AddModelError("Password", "User is not Found... You have to Registration First");
@@ -79,11 +80,11 @@ namespace MissionApp.Areas.Customer.Controllers
                 CityId = 18,
                 CountryId = 7
             };
-            var EmailFinder = _context.Users.FirstOrDefault(u => u.Email == registrationVM.Email);
+            var EmailFinder = _unitOfWork.User.GetFirstOrDefault(u => u.Email == registrationVM.Email);
             if (EmailFinder == null)
             {
-                _context.Users.Add(user);
-                _context.SaveChanges();
+                _unitOfWork.User.Add(user);
+                _unitOfWork.Save();
                 TempData["Success"] = "Registration is Completed...";
                 return RedirectToAction(nameof(Login));
             }
@@ -102,7 +103,7 @@ namespace MissionApp.Areas.Customer.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ForgotPassword(ForgotPasswordVM forgotPasswordVM)
         {
-            var emailChecker = _context.Users.FirstOrDefault(u => u.Email == forgotPasswordVM.Email);
+            var emailChecker = _unitOfWork.User.GetFirstOrDefault(u => u.Email == forgotPasswordVM.Email);
 
             if (emailChecker == null)
             {
@@ -131,8 +132,8 @@ namespace MissionApp.Areas.Customer.Controllers
                     Email = forgotPasswordVM.Email,
                     Token = token,
                 };
-                _context.PasswordResets.Add(newPasswordReset);
-                _context.SaveChanges();
+                _unitOfWork.PasswordReset.Add(newPasswordReset);
+                _unitOfWork.Save();
 
 
                 var resetLink = Url.Action("ResetPassword", "Auth", new { email = forgotPasswordVM.Email, token }, Request.Scheme);
@@ -180,21 +181,21 @@ namespace MissionApp.Areas.Customer.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Resetpassword(ResetPasswordVM resetPasswordVM)
         {
-            var userEmail = _context.Users.FirstOrDefault(u => u.Email == resetPasswordVM.Email);
+            var userEmail = _unitOfWork.User.GetFirstOrDefault(u => u.Email == resetPasswordVM.Email);
             //if (userEmail == null)
             //{
             //    RedirectToAction(nameof(ForgotPassword));
             //    TempData["Error"] = "Email is not registered...";
             //}
             userEmail.Password = resetPasswordVM.Password;
-            _context.Users.Update(userEmail);
-            _context.SaveChanges();
+            _unitOfWork.User.Update(userEmail);
+            _unitOfWork.Save();
 
-            var oldPasswordReset = _context.PasswordResets.FirstOrDefault(u => u.Token == resetPasswordVM.Token && u.Email == resetPasswordVM.Email);
+            var oldPasswordReset = _unitOfWork.PasswordReset.GetFirstOrDefault(u => u.Token == resetPasswordVM.Token && u.Email == resetPasswordVM.Email);
             if (oldPasswordReset != null)
             {
-                _context.PasswordResets.Remove(oldPasswordReset);
-                _context.SaveChanges();
+                _unitOfWork.PasswordReset.Remove(oldPasswordReset);
+                _unitOfWork.Save();
             }
 
             return RedirectToAction(nameof(Login));
