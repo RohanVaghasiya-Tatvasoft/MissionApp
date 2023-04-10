@@ -20,7 +20,7 @@ namespace MissionApp.Entities.ViewModels
         public IEnumerable<FavouriteMission> FavouriteMissions { get; set; }
         public IEnumerable<User> Volunteers { get; set; }
         public IEnumerable<MissionApplication> MissionApplications { get; set; }
-        public IEnumerable<MissionRating> MissionRatings { get; set; }
+        public IEnumerable<MissionRating> RateMission { get; set; }
         public IEnumerable<MissionMedium> MissionMedias { get; set; }
     }
 }

@@ -97,7 +97,7 @@
                             <small class="text-light me-auto mb-0" id="locationName">@mission.City.Name</small>
                         </div>
 
-                        @*@if (Model.UserInfo != null)
+                        @if (Model.UserInfo != null)
                         {
                             <button class="bg-dark bg-opacity-50 border-0 card-btn" id="likeThisMission" onclick="AddToFavourite(@mission.MissionId)">
                                 @if (Model.FavouriteMissions.Where(m => m.MissionId == mission.MissionId && m.UserId == Model.UserInfo.UserId).Count() == 1)
@@ -111,11 +111,12 @@
                             </button>
                         }
                         else
-                        {*@
+                        {
                             <button class="bg-dark bg-opacity-50 border-0 card-btn" id="likeThisMission" onclick="LoginFirst()">
                                 <i class="bi bi-heart text-white"></i>
                             </button>
-                        @*}*@
+                        }
+
 
                         @if (Model.UserInfo != null)
                         {
@@ -166,15 +167,15 @@
                                 <p>@mission.OrganizationName</p>
                             </div>
                             <div>
-                                @*@try
+                                @try
                                 {
-                                    @for (int i = 0; i < (int)@item.MissionRatings.Average(m => m.Rating); i++)
+                                    @for (int i = 0; i < (int)mission.MissionRatings.Average(u => u.Rating); i++)
                                     {
                                         <span id="ratings d-flex">
                                             <img src="~/images/star-fill.png" />
                                         </span>
                                     }
-                                    @for (int i = (int)@item.MissionRatings.Average(m => m.Rating); i < 5; i++)
+                                    @for (int i = (int)@mission.MissionRatings.Average(u => u.Rating); i < 5; i++)
                                     {
                                         <span id="ratings d-flex">
                                             <img src="~/images/star-empty.png" />
@@ -190,7 +191,7 @@
                                             <img src="~/images/star-empty.png" />
                                         </span>
                                     }
-                                }*@
+                                }
                             </div>
                         </div>
 

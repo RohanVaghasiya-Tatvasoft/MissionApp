@@ -43,8 +43,9 @@ namespace MissionApp.Areas.Customer.Controllers
                 Themes = _unitOfWork.MissionTheme.GetAll(),
                 Skills = _unitOfWork.Skill.GetAll(),
                 UserInfo = GetThisUser(),
-                GoalMissions = _unitOfWork.GoalMission.GetAll()
-
+                GoalMissions = _unitOfWork.GoalMission.GetAll(),
+                FavouriteMissions = _unitOfWork.FavouriteMission.GetAll(),
+                MissionApplications = _unitOfWork.MissionApplication.GetAll(),
             };
 
             List<Mission> missions = _unitOfWork.Mission.GetAll().ToList();
@@ -83,6 +84,20 @@ namespace MissionApp.Areas.Customer.Controllers
             else
             {
                 userMissionVM.Volunteers = _unitOfWork.User.GetAll();
+            }
+
+            foreach (var mission in userMissionVM.Missions)
+            {
+                try
+                {
+                    userMissionVM.RateMission = _unitOfWork.MissionRating.GetAccToFilter(u => u.MissionId == mission.MissionId);
+
+                }
+                catch
+                {
+                    userMissionVM.RateMission = null;
+                }
+
             }
 
             if (recsCount == 0)
@@ -162,7 +177,7 @@ namespace MissionApp.Areas.Customer.Controllers
             var missionInfo = _unitOfWork.Mission.GetFirstOrDefault(u => u.MissionId == id);
             var userInfo = GetThisUser();
             var thisMission = _unitOfWork.Mission.GetFirstOrDefault(u => u.MissionId.Equals(id));
-            var relatedMissions = _unitOfWork.Mission.GetAccToFilter(u => u.MissionId != id && (u.CityId == thisMission.CityId || u.CountryId == thisMission.CountryId || u.MissionThemeId == thisMission.MissionThemeId)).Take(3);
+            var relatedMissions = _unitOfWork.Mission.GetAccToFilter(u => u.MissionId != id && (u.CityId == thisMission.CityId || u.CountryId == thisMission.CountryId || u.MissionThemeId == thisMission.MissionThemeId));
             var missionRatings = GetMissionRatings(id);
             var cities = _unitOfWork.City.GetAll();
             var countries = _unitOfWork.Country.GetAll();
