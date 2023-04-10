@@ -197,7 +197,7 @@ public partial class ApplicationDbContext : DbContext
                 .IsUnicode(false)
                 .HasDefaultValueSql("('PENDING')")
                 .HasColumnName("Approval_Status");
-            entity.Property(e => e.Comment1)
+            entity.Property(e => e.CommentText)
                 .HasColumnType("text")
                 .HasColumnName("Comment");
             entity.Property(e => e.CommentId)

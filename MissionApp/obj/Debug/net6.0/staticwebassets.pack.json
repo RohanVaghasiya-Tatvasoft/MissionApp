@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\css\\volunteeringMissionPage.css",
+      "PackagePath": "staticwebassets\\css\\volunteeringMissionPage.css"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -477,6 +481,10 @@
       "PackagePath": "staticwebassets\\images\\xlsx.png"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\Carousel.js",
+      "PackagePath": "staticwebassets\\js\\Carousel.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\cardView.js",
       "PackagePath": "staticwebassets\\js\\cardView.js"
     },
@@ -487,6 +495,10 @@
     {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\volunteeringMissionPage.js",
+      "PackagePath": "staticwebassets\\js\\volunteeringMissionPage.js"
     },
     {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\lib\\bootstrap\\LICENSE",

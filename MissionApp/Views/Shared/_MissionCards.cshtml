@@ -256,7 +256,7 @@
                             @*@if (User.Identity.IsAuthenticated && item.EndDate > DateTime.Now)
                             {
 *@
-                                <a class="btn border-warning d-flex align-items-center justify-content-center mx-auto my-2" asp-action="" asp-controller="" id="applyNowBtn" asp-route-id="@mission.MissionId">
+                                <a class="btn border-warning d-flex align-items-center justify-content-center mx-auto my-2" asp-action="VolunteeringMissionPage" asp-controller="Mission" id="applyNowBtn" asp-route-id="@mission.MissionId">
                                     <p class="mb-0 pe-4 text-warning h6">Apply</p>
                                     <img src="/images/right-arrow.png" alt="">
                                 </a>

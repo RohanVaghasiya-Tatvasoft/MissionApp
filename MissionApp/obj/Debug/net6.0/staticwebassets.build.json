@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LRKJnIB3hk+jvw8xetZCcxmULd1bCtOl/wIDV31cbf4=",
+  "Hash": "2xOff5bQL1MYvdat/F0DOA9p+VWFahQDsgcHF9Jp9EA=",
   "Source": "MissionApp",
   "BasePath": "_content/MissionApp",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\css\\volunteeringMissionPage.css",
+      "SourceId": "MissionApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\",
+      "BasePath": "_content/MissionApp",
+      "RelativePath": "css/volunteeringMissionPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\volunteeringMissionPage.css"
     },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\favicon.ico",
@@ -2074,6 +2091,23 @@
       "OriginalItemSpec": "wwwroot\\js\\cardView.js"
     },
     {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\Carousel.js",
+      "SourceId": "MissionApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\",
+      "BasePath": "_content/MissionApp",
+      "RelativePath": "js/Carousel.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Carousel.js"
+    },
+    {
       "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\platformLandingPage.js",
       "SourceId": "MissionApp",
       "SourceType": "Discovered",
@@ -2106,6 +2140,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\js\\volunteeringMissionPage.js",
+      "SourceId": "MissionApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\",
+      "BasePath": "_content/MissionApp",
+      "RelativePath": "js/volunteeringMissionPage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\volunteeringMissionPage.js"
     },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

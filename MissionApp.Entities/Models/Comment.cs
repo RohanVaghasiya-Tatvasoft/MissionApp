@@ -7,7 +7,7 @@ public partial class Comment
 {
     public int CommentId { get; set; }
 
-    public string? Comment1 { get; set; }
+    public string? CommentText { get; set; }
 
     public int UserId { get; set; }
 
