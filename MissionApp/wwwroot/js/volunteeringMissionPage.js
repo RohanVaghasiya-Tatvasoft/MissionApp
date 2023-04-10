@@ -14,6 +14,11 @@ function AddToFavourite(missionId) {
         data: { 'missionId': missionId },
         success: function (data) {
             location.reload();
+            //var newm = $($.parseHTML(data)).find("#favouriteBtn").html();
+            //$("#favouriteBtn").html(newm);
+            //console.log(data);
+            //var s = $($.parseHTML(data)).find("#nav-comments").html();
+            //$("#nav-comments").html(s);
         },
         error: function (error) {
             console.log(error);

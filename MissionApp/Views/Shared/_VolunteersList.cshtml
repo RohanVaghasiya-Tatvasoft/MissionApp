@@ -1,1 +1,88 @@
-﻿<h2>This is literally most Fucking Universe and I am the worse myself Ever...........</h2>
+﻿@model VolunteerPageVM
+
+@{
+    PaginationVM Pager = new PaginationVM();
+
+    int pageNo = 0;
+
+    if (ViewBag.userPager != null)
+    {
+        Pager = ViewBag.userPager;
+        pageNo = Pager.CurrentPage;
+    }
+}
+
+<!--Recent volunteer-->
+<div class="col-12 border pt-3 px-4 mt-3">
+
+    <div class="border-bottom">
+        <h3 class="pb-3 mb-0" style="border-bottom:2px solid black; width:fit-content">Recent Volunteers</h3>
+    </div>
+
+    <div class="row align-items-center justify-content-center my-3">
+        @if (@Model.MissionApps != null)
+        {
+            @foreach (var volunteer in @Model.MissionApps)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="d-flex justify-content-center">
+                        <img src="@volunteer.User.Avatar" class="rounded-circle" height="70" width="70" />
+                    </div>
+                    <p class="d-flex justify-content-center" style="font-size: 13px">@volunteer.User.FirstName</p>
+                </div>
+            }
+        }
+        else
+        {
+            <H6>No Recent Volunteers</H6>
+        }
+
+    </div>
+</div>
+
+
+
+<!-- Pagination -->
+<!--Bottom of Recent volunteer-->
+<div class="pagging d-flex justify-content-between align-items-center border-1 border-top-0">
+    @if (Pager.TotalPages > 0)
+    {
+        @if (Pager.CurrentPage > 1)
+        {
+            <button onclick="loadVolunteers(pg=@(Pager.CurrentPage - 1),@Model.MissionInfo.MissionId)">
+                <div class="prev">
+                    <img src="~/images/left.png">
+                </div>
+            </button>
+        }
+        else
+        {
+            <button>
+                <div class="prev disabled">
+                    <img src="~/images/left.png">
+                </div>
+            </button>
+        }
+
+        <div>
+            <span>@Pager.TotalMissions Recent Volunteers (@Pager.CurrentPage out of @Pager.TotalPages)</span>
+        </div>
+
+        @if (Pager.CurrentPage < Pager.TotalPages)
+        {
+            <button onclick="loadVolunteers(pg=@(Pager.CurrentPage + 1),@Model.MissionInfo.MissionId)">
+                <div class="next">
+                    <img src="~/images/right-arrow1.png">
+                </div>
+            </button>
+        }
+        else
+        {
+            <button>
+                <div class="next disabled">
+                    <img src="~/images/right-arrow1.png">
+                </div>
+            </button>
+        }
+    }
+</div>

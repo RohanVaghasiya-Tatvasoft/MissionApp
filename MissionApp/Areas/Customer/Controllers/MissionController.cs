@@ -234,16 +234,16 @@ namespace MissionApp.Areas.Customer.Controllers
         {
             var thisUser = GetThisUser();
             var status = _unitOfWork.MissionApplication.GetFirstOrDefault(u => u.MissionId == missionId && u.UserId == thisUser.UserId);
-            if (status.ApprovalStatus == "DECLINE")
-            {
-                status.ApprovalStatus = "PENDING";
-                status.AppliedAt = DateTime.Now;
-                status.UpdatedAt = DateTime.Now;
-                _unitOfWork.MissionApplication.Update(status);
-                _unitOfWork.Save();
-            }
-            else
-            {
+            //if (status.ApprovalStatus == "DECLINE")
+            //{
+            //    status.ApprovalStatus = "PENDING";
+            //    status.AppliedAt = DateTime.Now;
+            //    status.UpdatedAt = DateTime.Now;
+            //    _unitOfWork.MissionApplication.Update(status);
+            //    _unitOfWork.Save();
+            //}
+            //else
+            //{
                 MissionApplication obj = new()
                 {
                     MissionId = missionId,
@@ -252,7 +252,7 @@ namespace MissionApp.Areas.Customer.Controllers
                 };
                 _unitOfWork.MissionApplication.Add(obj);
                 _unitOfWork.Save();
-            }
+            //}
 
             return RedirectToAction("volunteeringMissionPage", new { id = missionId });
         }
@@ -312,7 +312,7 @@ namespace MissionApp.Areas.Customer.Controllers
             {
                 foreach (var id in userIds)
                 {
-                    var inviteLink = Url.Action("volunteeringMissionPage", "Auth", new { id = missionId }, Request.Scheme);
+                    var inviteLink = Url.Action("volunteeringMissionPage", "Mission", new { id = missionId }, Request.Scheme);
                     var user = _unitOfWork.User.GetFirstOrDefault(u => u.UserId == id);
 
 

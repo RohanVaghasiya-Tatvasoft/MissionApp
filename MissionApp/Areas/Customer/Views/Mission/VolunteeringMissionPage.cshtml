@@ -3,7 +3,6 @@
     ViewData["Title"] = "Volunteering Mission Page";
     Layout = "~/Views/Shared/_MissionLayout.cshtml";
 }
-<h2>This is how fucking Universe Work...</h2>
 
 <body onload="loadVolunteers(pg = 1, @Model.MissionInfo.MissionId)">
     <!-- Upper Section -->
@@ -314,13 +313,13 @@
                                     if (@Model.MissionInfo.EndDate < DateTime.Now)
                                     {
                                         <a class="btn border-warning disabled d-flex align-items-center justify-content-center mx-auto my-3 py-3 w-50 px-3 " style="border-radius:50px;">
-                                            <p class="mb-0 pe-4 text-warning h6">MIssion Closed</p>
+                                            <p class="mb-0 pe-4 text-warning h6">Mission Closed</p>
                                         </a>
                                     }
                                     else if (Model.MissionApplications.ApprovalStatus == "APPROVE")
                                     {
                                         <a class="btn border-warning disabled d-flex align-items-center justify-content-center mx-auto my-3 py-3 w-50 px-3 " style="border-radius:50px;">
-                                            <p class="mb-0 pe-4 text-warning h6">Already Applied</p>
+                                            <p class="mb-0 pe-4 text-warning h6">Applied</p>
                                         </a>
                                     }
                                     else if (Model.MissionApplications.ApprovalStatus == "PENDING")
@@ -391,7 +390,7 @@
                                 </p>*@
                                 <h3 class="pb-2">Documents</h3>
                                 <div class="d-flex me-5" id="documentSmall">
-                                    @*@foreach (var documents in Model.MissionDocuments)
+                                    @foreach (var documents in Model.MissionDocuments)
                                     {
                                         if (documents.MissionId == Model.MissionInfo.MissionId)
                                         {
@@ -420,7 +419,7 @@
                                                 </div>
                                             }
                                         }
-                                    }*@
+                                    }
                                 </div>
                             </div>
 

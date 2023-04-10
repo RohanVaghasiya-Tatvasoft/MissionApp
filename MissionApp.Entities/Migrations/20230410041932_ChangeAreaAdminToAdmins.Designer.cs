@@ -12,8 +12,8 @@ using MissionApp.Entities.Data;
 namespace MissionApp.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230409201854_ChangeCommentPropertyToCommentText")]
-    partial class ChangeCommentPropertyToCommentText
+    [Migration("20230410041932_ChangeAreaAdminToAdmins")]
+    partial class ChangeAreaAdminToAdmins
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -244,7 +244,7 @@ namespace MissionApp.Entities.Migrations
 
                     b.Property<string>("CommentText")
                         .HasColumnType("text")
-                        .HasColumnName("Comment");
+                        .HasColumnName("CommentText");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()

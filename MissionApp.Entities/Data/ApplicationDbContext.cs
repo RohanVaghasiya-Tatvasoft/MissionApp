@@ -54,9 +54,9 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<Story> Stories { get; set; }
 
-    public virtual DbSet<StoryMedium> StoryMedia { get; set; }
-
     public virtual DbSet<StoryInvite> StoryInvites { get; set; }
+
+    public virtual DbSet<StoryMedium> StoryMedia { get; set; }
 
     public virtual DbSet<Timesheet> Timesheets { get; set; }
 
@@ -72,11 +72,11 @@ public partial class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<Admin>(entity =>
         {
-            entity.HasKey(e => e.AdminId).HasName("PK__Admin__4A3006F77E4A9AE8");
+            entity.HasKey(e => e.AdminId).HasName("PK__Admin__4A3006F76993C064");
 
             entity.ToTable("Admin");
 
-            entity.HasIndex(e => e.Email, "UQ__Admin__A9D10534F21D2807").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Admin__A9D1053463E59A00").IsUnique();
 
             entity.Property(e => e.AdminId).HasColumnName("Admin_Id");
             entity.Property(e => e.CreatedAt)
@@ -188,21 +188,15 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Comment");
+            entity.ToTable("Comment");
 
+            entity.Property(e => e.CommentId).HasColumnName("Comment_Id");
             entity.Property(e => e.ApprovalStatus)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasDefaultValueSql("('PENDING')")
                 .HasColumnName("Approval_Status");
-            entity.Property(e => e.CommentText)
-                .HasColumnType("text")
-                .HasColumnName("Comment");
-            entity.Property(e => e.CommentId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("Comment_Id");
+            entity.Property(e => e.CommentText).HasColumnType("text");
             entity.Property(e => e.CreatedAt)
                 .HasPrecision(0)
                 .HasDefaultValueSql("(getutcdate())")
@@ -216,12 +210,12 @@ public partial class ApplicationDbContext : DbContext
                 .HasColumnName("Updated_at");
             entity.Property(e => e.UserId).HasColumnName("User_Id");
 
-            entity.HasOne(d => d.Mission).WithMany()
+            entity.HasOne(d => d.Mission).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.MissionId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Comment__Mission__5629CD9C");
 
-            entity.HasOne(d => d.User).WithMany()
+            entity.HasOne(d => d.User).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Comment__User_Id__5535A963");
@@ -701,40 +695,11 @@ public partial class ApplicationDbContext : DbContext
                 .HasConstraintName("FK__Story__User_Id__0C85DE4D");
         });
 
-        modelBuilder.Entity<StoryMedium>(entity =>
-        {
-            entity.HasKey(e => e.StoryMediaId).HasName("PK__Story_Me__E32A7337EE2B68B2");
-
-            entity.ToTable("Story_Media");
-
-            entity.Property(e => e.StoryMediaId).HasColumnName("Story_Media_Id");
-            entity.Property(e => e.CreatedAt)
-                .HasPrecision(0)
-                .HasDefaultValueSql("(getutcdate())")
-                .HasColumnName("Created_at");
-            entity.Property(e => e.DeletedAt)
-                .HasPrecision(0)
-                .HasColumnName("Deleted_at");
-            entity.Property(e => e.Path).HasColumnType("text");
-            entity.Property(e => e.StoryId).HasColumnName("Story_Id");
-            entity.Property(e => e.Type)
-                .HasMaxLength(8)
-                .IsUnicode(false);
-            entity.Property(e => e.UpdatedAt)
-                .HasPrecision(0)
-                .HasColumnName("Updated_at");
-
-            entity.HasOne(d => d.Story).WithMany(p => p.StoryMedia)
-                .HasForeignKey(d => d.StoryId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Story_Med__Story__17F790F9");
-        });
-
         modelBuilder.Entity<StoryInvite>(entity =>
         {
             entity.HasKey(e => e.StoryInviteId).HasName("PK__Stoty_In__BE13AAD2013A9686");
 
-            entity.ToTable("Stoty_Invite");
+            entity.ToTable("Story_Invite");
 
             entity.Property(e => e.StoryInviteId).HasColumnName("Story_Invite_Id");
             entity.Property(e => e.CreatedAt)
@@ -765,6 +730,35 @@ public partial class ApplicationDbContext : DbContext
                 .HasForeignKey(d => d.ToUserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Stoty_Inv__To_Us__14270015");
+        });
+
+        modelBuilder.Entity<StoryMedium>(entity =>
+        {
+            entity.HasKey(e => e.StoryMediaId).HasName("PK__Story_Me__E32A7337EE2B68B2");
+
+            entity.ToTable("Story_Media");
+
+            entity.Property(e => e.StoryMediaId).HasColumnName("Story_Media_Id");
+            entity.Property(e => e.CreatedAt)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(getutcdate())")
+                .HasColumnName("Created_at");
+            entity.Property(e => e.DeletedAt)
+                .HasPrecision(0)
+                .HasColumnName("Deleted_at");
+            entity.Property(e => e.Path).HasColumnType("text");
+            entity.Property(e => e.StoryId).HasColumnName("Story_Id");
+            entity.Property(e => e.Type)
+                .HasMaxLength(8)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedAt)
+                .HasPrecision(0)
+                .HasColumnName("Updated_at");
+
+            entity.HasOne(d => d.Story).WithMany(p => p.StoryMedia)
+                .HasForeignKey(d => d.StoryId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Story_Med__Story__17F790F9");
         });
 
         modelBuilder.Entity<Timesheet>(entity =>

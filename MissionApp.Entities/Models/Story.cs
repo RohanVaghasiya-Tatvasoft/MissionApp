@@ -27,9 +27,9 @@ public partial class Story
 
     public virtual Mission Mission { get; set; } = null!;
 
-    public virtual ICollection<StoryMedium> StoryMedia { get; } = new List<StoryMedium>();
-
     public virtual ICollection<StoryInvite> StoryInvites { get; } = new List<StoryInvite>();
+
+    public virtual ICollection<StoryMedium> StoryMedia { get; } = new List<StoryMedium>();
 
     public virtual User User { get; set; } = null!;
 }

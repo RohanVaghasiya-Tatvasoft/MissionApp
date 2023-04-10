@@ -33,6 +33,18 @@
       "PackagePath": "staticwebassets\\css\\volunteeringMissionPage.css"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\documents\\CI Platform - DB.xlsx",
+      "PackagePath": "staticwebassets\\documents\\CI Platform - DB.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\documents\\CI-SRS-Final-23.docx",
+      "PackagePath": "staticwebassets\\documents\\CI-SRS-Final-23.docx"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\documents\\keyboard-shortcuts.pdf",
+      "PackagePath": "staticwebassets\\documents\\keyboard-shortcuts.pdf"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\MissionApp_Web\\MissionApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

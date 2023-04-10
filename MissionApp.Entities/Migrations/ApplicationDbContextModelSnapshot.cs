@@ -241,7 +241,7 @@ namespace MissionApp.Entities.Migrations
 
                     b.Property<string>("CommentText")
                         .HasColumnType("text")
-                        .HasColumnName("Comment");
+                        .HasColumnName("CommentText");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()

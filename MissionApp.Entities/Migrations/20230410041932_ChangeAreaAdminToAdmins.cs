@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MissionApp.Entities.Migrations
 {
     /// <inheritdoc />
-    public partial class ChangeCommentPropertyToCommentText : Migration
+    public partial class ChangeAreaAdminToAdmins : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -346,7 +346,7 @@ namespace MissionApp.Entities.Migrations
                 {
                     Comment_Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Comment = table.Column<string>(type: "text", nullable: true),
+                    CommentText = table.Column<string>(type: "text", nullable: true),
                     User_Id = table.Column<int>(type: "int", nullable: false),
                     Mission_Id = table.Column<int>(type: "int", nullable: false),
                     Approval_Status = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false, defaultValueSql: "('PENDING')"),
